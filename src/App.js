@@ -1,24 +1,43 @@
-import logo from './logo.svg';
+import * as React from 'react';
+
 import './App.css';
+import InputText from './InputText';
+import {Button} from 'antd';
 
 function App() {
+  const ref = React.useRef({});
+  const [text, setText] = React.useState(null);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className="App">
+        useRef example
+        <div className={'inputTable'}>
+          <InputText
+              ref={ref}
+              name={'name'}
+          />
+          <InputText
+              ref={ref}
+              name={'email'}
+          />
+          <InputText
+              ref={ref}
+              name={'password'}
+          />
+        </div>
+
+        <Button className={'primary'} type={'primary'}
+                onClick={() => setText({...ref.current})}>Submit</Button>
+        <Button className={'secondary'} type={'secondary'}
+                onClick={() => setText({...ref.current})}>Reset</Button>
+
+        <div className={'textExample'}>
+          Name: {text?.name || ''} <br/>
+          Email: {text?.email || ''} <br/>
+          Password: {text?.password || ''} <br/>
+        </div>
+
+      </div>
   );
 }
 

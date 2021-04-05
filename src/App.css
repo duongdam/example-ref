@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  padding: 20px 5px;
 }
 
 .App-logo {
@@ -35,4 +36,28 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.inputTable {
+  max-width: 500px;
+  margin: auto;
+}
+
+.inputValue {
+  margin: 10px;
+}
+
+.textExample {
+  margin: 20px 10px;
+}
+
+.primary {
+  min-width: 100px;
+}
+
+.secondary {
+  background: red;
+  margin-left: 10px;
+  min-width: 100px;
 }
