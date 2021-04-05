@@ -28,8 +28,6 @@ function App() {
 
         <Button className={'primary'} type={'primary'}
                 onClick={() => setText({...ref.current})}>Submit</Button>
-        <Button className={'secondary'} type={'secondary'}
-                onClick={() => setText({...ref.current})}>Reset</Button>
 
         <div className={'textExample'}>
           Name: {text?.name || ''} <br/>
